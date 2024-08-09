@@ -60,11 +60,11 @@ Follow the instructions [here](https://developers.google.com/gmail/api/quickstar
         - Enter message text.
 
     - **Delete Message(s)**:
-        - Enter query (e.g., `from:example@gmail.com` or `subject:Test`).
+        - Enter query (e.g., `from:example@gmail.com` or `subject: <string text>`).
         - Confirm deletion.
 
     - **Get Message ID(s) and Count**:
-        - Enter query (e.g., `from:example@gmail.com` or `subject:Test`).
+        - Enter query (e.g., `from:example@gmail.com` or `subject: <string text>`).
 
 ## Notes
 
