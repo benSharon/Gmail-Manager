@@ -45,7 +45,7 @@ def delete_message_flow(service_api):
         print(messages)
         print(f'Number of messages: {len(messages)}')
 
-        if len(messages) == 0:
+        if not messages:
             print('No message-ids have been retrieved.')
             input('Press \'Enter\' to get back to the main menu...')
             return
@@ -81,7 +81,7 @@ def get_message_ids_flow(service_api):
                   'or type \'back\' to go back to main menu: ')
     while query != 'back':
         messages = get_message_ids(service_api, query=query)
-        if len(messages) == 0:
+        if not messages:
             print('No message-ids have been retrieved.')
             input('Press \'Enter\' to get back to the main menu...')
             return
