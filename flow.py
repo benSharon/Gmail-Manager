@@ -21,7 +21,7 @@ def section_header(flow_task):
     return decorator
 
 
-@section_header('SEND_MESSAGE:')
+@section_header('SEND_MESSAGE')
 def send_message_flow(service_api):
     sender = input('Enter sender email: ')
     destination = input('Enter destination email: ')
@@ -35,7 +35,7 @@ def send_message_flow(service_api):
     return
 
 
-@section_header('DELETE_MESSAGE:')
+@section_header('DELETE_MESSAGE')
 def delete_message_flow(service_api):
     query = input('Enter query (ex: \'from: <email/name>\' or \'subject: <subject string>\') \n'
                   'or type \'back\' to go back to main menu: ')
@@ -75,7 +75,7 @@ def delete_message_flow(service_api):
             return
 
 
-@section_header('GET_MESSAGE_IDs:')
+@section_header('GET_MESSAGE_IDs')
 def get_message_ids_flow(service_api):
     query = input('Enter query (ex: \'from: <email/name>\' or \'subject: <subject string>\') \n'
                   'or type \'back\' to go back to main menu: ')
