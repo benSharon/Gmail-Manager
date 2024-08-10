@@ -22,7 +22,6 @@ def main():
 4. Exit.
 """
 
-    # choice = ''
     while True:
         clean_screen()
         print(MAIN_MENU)
