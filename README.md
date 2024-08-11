@@ -24,11 +24,13 @@ The project is structured into four main Python files:
   - Defines the user interaction flows for sending, deleting, and retrieving email messages.
   - Guides the user through the necessary steps for each operation.
 
-- **`main.py`:**
+- **`__main__.py`:**
   - The main entry point of the application.
   - Manages the main menu and user interactions.
   - Calls the appropriate functions from `flow.py` based on user input.
 
+### `authenticator.py`, `handler.py`, and `flow.py` are located under gmail_manager directory.
+ 
 ## Setup and Installation
 
 1. Install the required dependencies:
@@ -43,7 +45,7 @@ Follow the instructions [here](https://developers.google.com/gmail/api/quickstar
 
 1. **Run the application**:
     ```sh
-    python main.py
+    python __main__.py
     ```
 
 2. **Follow the on-screen prompts**:
