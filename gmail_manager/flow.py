@@ -1,9 +1,10 @@
 import time
 import os
-from handler import (create_message,
-                     send_message,
-                     get_message_ids,
-                     delete_messages)
+
+from gmail_manager.handler import (create_message,
+                                   send_message,
+                                   get_message_ids,
+                                   delete_messages)
 
 
 def clean_screen():
