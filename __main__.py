@@ -5,11 +5,11 @@
 import sys
 import time
 
-from authenticator import authenticate
-from flow import (clean_screen,
-                  send_message_flow,
-                  get_message_ids_flow,
-                  delete_message_flow)
+from gmail_manager.authenticator import authenticate
+from gmail_manager.flow import (send_message_flow,
+                                get_message_ids_flow,
+                                delete_message_flow,
+                                clean_screen)
 
 
 def main():
