@@ -34,7 +34,7 @@ python __main__.py --token /path/to/your/token.json
 | Argument            | Description                                                                                                                                     |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `-t, --token`       | Path to your `.json` token file (required).                                                                                                     |
-| `-q, --query`       | Query for retrieving or deleting emails. Example: `'from: someone@example.com'` (functions with both `--get-message-ids` and `delete-messages`) |
+| `-q, --query`       | Query for retrieving or deleting emails. Example: `'from: someone@example.com'` (required with either `--get-message-ids` or `delete-messages`) |
 | `--get-message-ids` | Retrieve the message IDs of emails that match the query.                                                                                        |
 | `--delete-messages` | Delete emails that match the query.                                                                                                             |
 | `--send-message`    | Send an email. Requires `[SENDER]`, `[DESTINATION]`, `[SUBJECT]`, and `[MESSAGE]` as arguments.                                                 |
