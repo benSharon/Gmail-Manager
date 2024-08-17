@@ -32,7 +32,6 @@ def get_message_ids_flow(service_api, query):
 
 def delete_message_flow(service_api, query):
     messages = get_message_ids(service_api, query=query)
-    print(messages)
     print(f'Number of message{'s' if len(messages) > 1 else ''}: {len(messages)}')
 
     if not messages:
@@ -40,19 +39,20 @@ def delete_message_flow(service_api, query):
         return
     if len(messages) > 1000:
         messages = messages[:1000]
+        print(messages)
         print('Reduced number of message-ids to 1000')
 
     delete_choice = input('Are you sure you want to delete (yes/no): ')
 
-    if delete_choice == 'yes':
-        print(f'Deleting message{'s' if len(messages) > 1 else ''}...')
-        delete_messages(service_api, messages)
-        time.sleep(3)
-        print(f'Message{'s' if len(messages) > 1 else ''} deleted.')
-        return
-    elif delete_choice == 'no':
-        print('Aborted deletion...')
-        return
-    else:
-        print('\nInvalid choice. Answer should be \'yes\' or \'no\'.\n')
-        return
+    while True:  # Keep prompting till input is either 'yes' or 'no'
+        if delete_choice == 'yes':
+            print(f'Deleting message{'s' if len(messages) > 1 else ''}...')
+            delete_messages(service_api, messages)
+            time.sleep(3)
+            print(f'Message{'s' if len(messages) > 1 else ''} deleted.')
+            return
+        elif delete_choice == 'no':
+            print('Aborted deletion...')
+            return
+        else:
+            delete_choice = input('Wrong input. Answer should be \'yes\' or \'no\': ')
