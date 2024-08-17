@@ -50,6 +50,9 @@ def delete_message_flow(service_api, query):
         time.sleep(3)
         print('Messages deleted.')
         return
-    if delete_choice == 'no':
+    elif delete_choice == 'no':
         print('Aborted deletion...')
+        return
+    else:
+        print('\nInvalid choice. Answer should be \'yes\' or \'no\'.\n')
         return
