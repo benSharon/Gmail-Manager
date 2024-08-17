@@ -14,7 +14,7 @@ def main():
     parser = argparse.ArgumentParser(prog="python __main__.py")
 
     # Token (required)
-    token_group = parser.add_argument_group('Token - REQUIRED')
+    token_group = parser.add_argument_group('Token (REQUIRED)')
     token_group.add_argument('-t',
                              '--token',
                              help='Enter the path to your .json token file',
