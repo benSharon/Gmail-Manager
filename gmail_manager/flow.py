@@ -32,16 +32,17 @@ def get_message_ids_flow(service_api, query):
 
 def delete_message_flow(service_api, query):
     messages = get_message_ids(service_api, query=query)
+    print(messages)
     print(f'Number of message{'s' if len(messages) > 1 else ''}: {len(messages)}')
+
+    if len(messages) > 1000:
+        print(f'Number of message{'s' if len(messages) > 1 else ''}: {len(messages)}')
+        messages = messages[:1000]
+        print('Reduced number of message-ids to 1000')
 
     if not messages:
         print('No message-ids have been retrieved.')
         return
-    if len(messages) > 1000:
-        print(messages)
-        print(f'Number of message{'s' if len(messages) > 1 else ''}: {len(messages)}')
-        messages = messages[:1000]
-        print('Reduced number of message-ids to 1000')
 
     delete_choice = input('Are you sure you want to delete (yes/no): ')
 
