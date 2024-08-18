@@ -3,7 +3,7 @@
 # https://thepythoncode.com/article/use-gmail-api-in-python#google_vignette
 
 import argparse
-import textwrap
+
 from gmail_manager.authenticator import authenticate
 from gmail_manager.flow import (send_message_flow,
                                 get_message_ids_flow,
