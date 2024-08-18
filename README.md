@@ -63,10 +63,10 @@ Send Email:
                         Send an email. Requires sender email, destination email, subject, and message text
 
 Example of usage:
-    python __main__ --token token.json --get-message-ids --query "from: John"
-    python __main__ --token token.json --get-message-ids --query "subject: Order On The Way"
-    python __main__ --token token.json --delete-messages --query "from: John"
-    python __main__ --token token.json --send-message sender@hotmail.com receiver@gmail.com "Example Subject" "This is the message box."
+    python __main__.py --token token.json --get-message-ids --query "from: John"
+    python __main__.py --token token.json --get-message-ids --query "subject: Order On The Way"
+    python __main__.py --token token.json --delete-messages --query "from: John"
+    python __main__.py --token token.json --send-message sender@hotmail.com receiver@gmail.com "Example Subject" "This is the message box."
 ```
 
 ### Examples
