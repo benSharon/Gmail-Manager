@@ -3,21 +3,30 @@
 # https://thepythoncode.com/article/use-gmail-api-in-python#google_vignette
 
 import argparse
-
+import textwrap
 from gmail_manager.authenticator import authenticate
 from gmail_manager.flow import (send_message_flow,
                                 get_message_ids_flow,
                                 delete_message_flow)
 
+epilog = '''Example of usage:
+    python __main__ --token token.json --get-message-ids --query "from: John"
+    python __main__ --token token.json --get-message-ids --query "subject: Order On The Way"
+    python __main__ --token token.json --delete-messages --query "from: John"
+    python __main__ --token token.json --send-message sender@hotmail.com receiver@gmail.com "Example Subject" "This is the message box."
+'''
+
 
 def main():
     prog = 'python __main__.py'
     parser = argparse.ArgumentParser(prog=prog,
+                                     formatter_class=argparse.RawTextHelpFormatter,
                                      usage=f'{prog} [-h] -t TOKEN ([-q QUERY] [--get-message-ids | --delete-messages]) '
                                            f'[--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]]',
                                      description='Command-line tool for managing Gmail messages, '
                                                  'including sending emails, retrieving message IDs, '
-                                                 'and deleting messages in bulk using the Gmail API.')
+                                                 'and deleting messages in bulk using the Gmail API.',
+                                     epilog=epilog)
 
     # Token (required)
     token_group = parser.add_argument_group('Token (REQUIRED)')
@@ -51,16 +60,6 @@ def main():
                             help='Send an email. Requires sender email, destination email, subject, and message text',
                             nargs=4,
                             metavar=('[SENDER]', '[DESTINATION]', '[SUBJECT]', '[MESSAGE]'))
-
-    examples = parser.add_argument_group('Examples')
-    examples.add_argument('python __main__ --token token.json --get-message-ids '
-                          '--query "from: John"')
-    examples.add_argument('python __main__ --token token.json --get-message-ids '
-                          '--query "subject: Order On The Way"')
-    examples.add_argument('python __main__ --token token.json --delete-messages '
-                          '--query "from: John"')
-    examples.add_argument('python __main__ --token token.json --send-message sender@hotmail.com receiver.gmail.com '
-                          '"Example Subject" "This is the message box."')
 
     args = parser.parse_args()
 
