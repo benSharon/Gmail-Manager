@@ -41,12 +41,14 @@ python __main__.py --token /path/to/your/token.json
 
 `python __main__.py --help` displays the following:
 ```bash
-usage: python __main__.py [-h] -t TOKEN [-q QUERY] [--get-message-ids | --delete-messages] [--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]]
+usage: python __main__.py [-h] -t TOKEN ([-q QUERY] [--get-message-ids | --delete-messages]) [--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]]
+
+Command-line tool for managing Gmail messages, including sending emails, retrieving message IDs, and deleting messages in bulk using the Gmail API.
 
 options:
   -h, --help            show this help message and exit
 
-Token - REQUIRED:
+Token (REQUIRED):
   -t TOKEN, --token TOKEN
                         Enter the path to your .json token file
 
