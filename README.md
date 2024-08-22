@@ -104,7 +104,7 @@ python __main__.py --token /path/to/your/token.json --delete-messages --query "s
 ## If token is expired/invalid:
 - When running the app, if you get an error saying 'token invalid/expired', delete the token.json file and re-run the app:
 ```python
-python __main__.py --token <your .json token file>
+python __main__.py --token <your .json credentials file>
 ```
 - It will then open a new tab in the browser (choose your email):
   ![image](https://github.com/user-attachments/assets/18da2d35-b88d-421d-b998-ae8b29641801)
