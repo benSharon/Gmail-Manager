@@ -102,7 +102,7 @@ python __main__.py --token /path/to/your/token.json --delete-messages --query "s
 
 
 ## If token is expired/invalid:
-- When running the app, if you get an error saying 'token invalid/expired', delete the token.json file and re-run the app:
+- When running the app, if you get an error saying 'token invalid/expired', delete the token.json file and re-run the app. You will have to use the `credentials.json` file for the authentication:
 ```python
 python __main__.py --token <your .json credentials file>
 ```
