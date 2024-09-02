@@ -13,15 +13,15 @@ from gmail_manager.flow import (
 
 EPILOG = """
 Example of usage:
-    python __main__.py --token token.json --get-message-ids --query "from:John"
-    python __main__.py --token token.json --get-message-ids --query "subject:Order"
-    python __main__.py --token token.json --delete-messages --query "from:John"
-    python __main__.py --token token.json --send-message sender@hotmail.com receiver@gmail.com "Example Subject" "This is the message box."
+    python gmail_cli.py --token token.json --get-message-ids --query "from:John"
+    python gmail_cli.py --token token.json --get-message-ids --query "subject:Order"
+    python gmail_cli.py --token token.json --delete-messages --query "from:John"
+    python gmail_cli.py --token token.json --send-message sender@hotmail.com receiver@gmail.com "Example Subject" "This is the message box."
 """
 
 
 def main():
-    prog = "python __main__.py"
+    prog = "python gmail_cli.py"
     parser = argparse.ArgumentParser(
         prog=prog,
         formatter_class=argparse.RawTextHelpFormatter,
