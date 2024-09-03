@@ -23,7 +23,7 @@ This project provides a command-line tool for managing Gmail messages, including
 
 2. Run the application using the following command (go to **If token is expired/invalid** section for authentication steps)::
 
-```sh
+```
 python __main__.py --token /path/to/your/token.json
 ```
 
