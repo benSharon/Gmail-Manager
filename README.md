@@ -24,7 +24,7 @@ This project provides a command-line tool for managing Gmail messages, including
 2. Run the application using the following command (go to **If token is expired/invalid** section for authentication steps)::
 
 ```
-python __main__.py --token /path/to/your/token.json
+python gmail_cli.py --token /path/to/your/token.json
 ```
 
 ## Usage
@@ -39,9 +39,9 @@ python __main__.py --token /path/to/your/token.json
 | `--delete-messages` | Delete emails that match the query.                                                                                                             |
 | `--send-message`    | Send an email. Requires `[SENDER]`, `[DESTINATION]`, `[SUBJECT]`, and `[MESSAGE]` as arguments.                                                 |
 
-`python __main__.py --help` displays the following:
+`python gmail_cli.py --help` displays the following:
 ```bash
-usage: python __main__.py [-h] -t TOKEN ([-q QUERY] [--get-message-ids | --delete-messages]) [--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]]
+usage: python gmail_cli.py [-h] -t TOKEN ([-q QUERY] [--get-message-ids | --delete-messages]) [--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]]
 
 Command-line tool for managing Gmail messages, including sending emails, retrieving message IDs, and deleting messages in bulk using the Gmail API.
 
@@ -63,10 +63,10 @@ Send Email:
                         Send an email. Requires sender email, destination email, subject, and message text
 
 Example of usage:
-    python __main__.py --token token.json --get-message-ids --query "from:John"
-    python __main__.py --token token.json --get-message-ids --query "subject:Order"
-    python __main__.py --token token.json --delete-messages --query "from:John"
-    python __main__.py --token token.json --send-message sender@hotmail.com receiver@gmail.com "Example Subject" "This is the message box."
+    python gmail_cli.py --token token.json --get-message-ids --query "from:John"
+    python gmail_cli.py --token token.json --get-message-ids --query "subject:Order"
+    python gmail_cli.py --token token.json --delete-messages --query "from:John"
+    python gmail_cli.py --token token.json --send-message sender@hotmail.com receiver@gmail.com "Example Subject" "This is the message box."
 ```
 
 ### Examples
@@ -74,19 +74,19 @@ Example of usage:
 1. **Send an email**:
 
 ```python
-python __main__.py --token /path/to/your/token.json --send-message your-email@gmail.com recipient-email@gmail.com "Subject" "Message text"
+python gmail_cli.py --token /path/to/your/token.json --send-message your-email@gmail.com recipient-email@gmail.com "Subject" "Message text"
 ```
 
 2. **Get message IDs**:
 
 ```python
-python __main__.py --token /path/to/your/token.json --get-message-ids --query "from:someone@example.com"
+python gmail_cli.py --token /path/to/your/token.json --get-message-ids --query "from:someone@example.com"
 ```
 
 3. **Delete messages**:
 
 ```python
-python __main__.py --token /path/to/your/token.json --delete-messages --query "subject:Important"
+python gmail_cli.py --token /path/to/your/token.json --delete-messages --query "subject:Important"
 ```
 
 ## Notes
@@ -104,7 +104,7 @@ python __main__.py --token /path/to/your/token.json --delete-messages --query "s
 ## If token is expired/invalid:
 - When running the app, if you get an error saying 'token invalid/expired', delete the token.json file and re-run the app. You will have to use the `credentials.json` file for the authentication:
 ```python
-python __main__.py --token <your .json credentials file>
+python gmail_cli.py --token <your .json credentials file>
 ```
 - It will then open a new tab in the browser (choose your email):
   ![image](https://github.com/user-attachments/assets/18da2d35-b88d-421d-b998-ae8b29641801)
