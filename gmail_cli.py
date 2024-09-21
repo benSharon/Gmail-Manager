@@ -18,6 +18,7 @@ Example of usage:
     python gmail_cli.py --token token.json --get-message-ids --query "subject:Order"
     python gmail_cli.py --token token.json --delete-messages --query "from:John"
     python gmail_cli.py --token token.json --send-message sender@hotmail.com receiver@gmail.com "Example Subject" "This is the message box."
+    python gmail_cli.py --token token.json --get-message-id-content --message-id <MESSAGE-ID>
 """
 
 
