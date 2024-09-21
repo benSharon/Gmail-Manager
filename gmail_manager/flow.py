@@ -6,6 +6,7 @@ from gmail_manager.handler import (
     send_message,
     get_message_ids,
     delete_messages,
+    get_message_content,
 )
 
 
@@ -27,9 +28,17 @@ def get_message_ids_flow(service_api, query):
         print("\nNo message-ids have been retrieved.\n")
         return
     else:
-        print(messages)
+        for message in messages:
+            print(f"'ids': {message["id"]}")
         print(f'\nNumber of message{'s' if len(messages) > 1 else ''}: {len(messages)}\n')
         return
+
+
+def get_message_content_flow(service_api, message_id):
+    if not message_id:
+        print("\nMessage-id not found.\n")
+    else:
+        get_message_content(service_api, message_id)
 
 
 def delete_message_flow(service_api, query):

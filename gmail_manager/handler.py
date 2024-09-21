@@ -45,6 +45,44 @@ def get_message_ids(service, query):
     return messages_ids
 
 
+def get_message_content(service, message_id):
+    # Get the message
+    message = (
+        service.users()
+        .messages()
+        .get(userId="me", id=message_id, format="full")
+        .execute()
+    )
+
+    # Extract headers
+    headers = message["payload"]["headers"]
+    subject = next(header["value"] for header in headers if header["name"] == "Subject")
+    from_email = next(header["value"] for header in headers if header["name"] == "From")
+
+    # Extract the body of the message
+    decoded_body = ""
+
+    # check if message has parts
+    if "parts" in message["payload"]:
+        parts = message["payload"]["parts"]
+        for part in parts:
+            if part["mimeType"] == "text/plain":
+                body_data = part["body"]["data"]
+                decoded_body = base64.urlsafe_b64decode(body_data).decode("utf-8")
+                break
+            else:
+                decoded_body = "No body content found"
+    else:
+        # if not parts, handle a simple message
+        body_data = message["payload"]["body"]["data"]
+        decoded_body = base64.urlsafe_b64decode(body_data).decode("utf-8")
+
+    # Display content
+    print(f"\nFrom: {from_email}\n")
+    print(f"Subject: {subject}\n")
+    print(f"Body: {decoded_body}\n")
+
+
 def delete_messages(service, messages: list):
     # This method deletes a bulk of messages
     # To delete a single message:
