@@ -30,7 +30,9 @@ def get_message_ids_flow(service_api, query):
     else:
         for message in messages:
             print(f"'ids': {message["id"]}")
-        print(f'\nNumber of message{'s' if len(messages) > 1 else ''}: {len(messages)}\n')
+        print(
+            f'\nNumber of message{'s' if len(messages) > 1 else ''}: {len(messages)}\n'
+        )
         return
 
 
