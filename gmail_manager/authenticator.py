@@ -5,10 +5,10 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
 
+SCOPES = ["https://mail.google.com/"]
 # If modifying these scopes, delete the file token.json.
 # "https://www.googleapis.com/auth/gmail.modify" DOES NOT give you permission to delete.
 # "https://mail.google.com" gives full access to the account - which includes delete permission.
-SCOPES = ["https://mail.google.com/"]
 
 
 def get_gmail_api(creds):
