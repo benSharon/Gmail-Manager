@@ -9,7 +9,7 @@ from gmail_manager.flow import (
     send_message_flow,
     get_message_ids_flow,
     delete_message_flow,
-    get_message_content_flow
+    get_message_content_flow,
 )
 
 EPILOG = """
@@ -80,8 +80,13 @@ def main():
     message_content = parser.add_argument_group("Message Content")
     message_content.add_argument(
         "--get-message-id-content",
+        action="store_true",
+        help="Retrieve the content of a message-id",
+    )
+    message_content.add_argument(
+        "--message-id",
         type=str,
-        help="Retrieve the content of a message-id"
+        help="Message-id of that mail we want to read"
     )
 
     args = parser.parse_args()
@@ -101,7 +106,7 @@ def main():
         send_message_flow(service_api, *args.send_message)
 
     elif args.get_message_id_content:
-        get_message_content_flow(service_api, args.get_message_id_content)
+        get_message_content_flow(service_api, args.message_id)
 
 
 if __name__ == "__main__":
