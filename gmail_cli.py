@@ -28,7 +28,7 @@ def main():
         prog=prog,
         formatter_class=argparse.RawTextHelpFormatter,
         usage=f"{prog} [-h] -t TOKEN ([-q QUERY] [--get-message-ids | --delete-messages]) "
-        f"[--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]]",
+        f"[--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]] (--get-message-id-content [--message-id MESSAGE-ID])",
         description="Command-line tool for managing Gmail messages, "
         "including sending emails, retrieving message IDs, "
         "and deleting messages in bulk using the Gmail API.",
@@ -95,18 +95,21 @@ def main():
     service_api = authenticate()
 
     if (args.get_message_ids or args.delete_messages) and not args.query:
-        parser.error("--query is required with --get-message-ids or --delete-messages")
+        parser.error("'--query' is required with '--get-message-ids' or '--delete-messages'")
 
     if args.delete_messages:
         delete_message_flow(service_api, args.query)
 
-    elif args.get_message_ids:
+    if args.get_message_ids:
         get_message_ids_flow(service_api, args.query)
 
-    elif args.send_message:
+    if args.send_message:
         send_message_flow(service_api, *args.send_message)
 
-    elif args.get_message_id_content:
+    if (args.get_message_id_content and not args.message_id) or (not args.get_message_id_content and args.message_id):
+        parser.error("'--get-message-id-content' and '--message-id' must be issued together")
+
+    if args.get_message_id_content and args.message_id:
         get_message_content_flow(service_api, args.message_id)
 
 
