@@ -56,8 +56,8 @@ def get_message_content(service, message_id):
 
     # Extract headers
     headers = message["payload"]["headers"]
-    subject = next(header["value"] for header in headers if header["name"] == "Subject")
-    from_email = next(header["value"] for header in headers if header["name"] == "From")
+    subject = next(header["value"] for header in headers if header["name"] == "Subject" or header["name"] == "subject")
+    from_email = next(header["value"] for header in headers if header["name"] == "From" or header["name"] == "from")
 
     # Extract the body of the message
     decoded_body = ""
