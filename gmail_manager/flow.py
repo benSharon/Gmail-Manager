@@ -25,7 +25,7 @@ def send_message_flow(service_api, sender, destination, subject, message_text):
 def get_message_ids_flow(service_api, query):
     messages = get_message_ids(service_api, query=query)
     if not messages:
-        print("\nNo message-ids have been retrieved.\n")
+        print("\nNo message-ids have been found.\n")
         return
     else:
         print()
