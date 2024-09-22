@@ -18,9 +18,9 @@ def send_message(service, message):
         sent_message = (
             service.users().messages().send(userId="me", body=message).execute()
         )
-        print(f'Message Id: {sent_message["id"]}')
+        print(f'\nMessage ID: {sent_message["id"]}')
     except HttpError as error:
-        print(f"An error occurred: {error}")
+        print(f"\nAn error occurred: {error}")
 
 
 def get_message_ids(service, query):
