@@ -28,8 +28,9 @@ def get_message_ids_flow(service_api, query):
         print("\nNo message-ids have been retrieved.\n")
         return
     else:
+        print()
         for message in messages:
-            print(f"'ids': {message["id"]}")
+            print(f"id: {message["id"]}")
         print(
             f'\nNumber of message{'s' if len(messages) > 1 else ''}: {len(messages)}\n'
         )
@@ -45,19 +46,21 @@ def get_message_content_flow(service_api, message_id):
 
 def delete_message_flow(service_api, query):
     messages = get_message_ids(service_api, query=query)
-    print(messages)
-    print(f'Number of message{'s' if len(messages) > 1 else ''}: {len(messages)}')
+    print()
+    for message in messages:
+        print(f"id: {message["id"]}")
+    print(f'\nNumber of message{'s' if len(messages) > 1 else ''}: {len(messages)}\n')
 
     if len(messages) > 1000:
-        print(f'Number of message{'s' if len(messages) > 1 else ''}: {len(messages)}')
+        print(f'\nNumber of message{'s' if len(messages) > 1 else ''}: {len(messages)}\n')
         messages = messages[:1000]
-        print("Reduced number of message-ids to 1000")
+        print("\nReduced number of message-ids to 1000\n")
 
     if not messages:
-        print("No message-ids have been retrieved.")
+        print("\nNo message-ids have been retrieved.\n")
         return
 
-    delete_choice = input("Are you sure you want to delete (yes/no): ")
+    delete_choice = input("\nAre you sure you want to delete (yes/no): ")
 
     wrong_input = True
     while wrong_input:  # Keep prompting till input is either 'yes' or 'no'
@@ -68,7 +71,7 @@ def delete_message_flow(service_api, query):
             print(f'\nMessage{'s' if len(messages) > 1 else ''} deleted.\n')
             return
         if delete_choice == "no":
-            print("Aborted deletion...")
+            print("\nAborted deletion...\n")
             return
         else:
             delete_choice = input("Wrong input. Answer should be 'yes' or 'no': ")
