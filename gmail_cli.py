@@ -28,7 +28,8 @@ def main():
         prog=prog,
         formatter_class=argparse.RawTextHelpFormatter,
         usage=f"{prog} [-h] -t TOKEN ([-q QUERY] [--get-message-ids | --delete-messages]) "
-        f"[--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]] (--get-message-id-content [--message-id MESSAGE-ID])",
+        f"[--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]] (--get-message-id-content [--message-id "
+        f"MESSAGE-ID])",
         description="Command-line tool for managing Gmail messages, "
         "including sending emails, retrieving message IDs, "
         "and deleting messages in bulk using the Gmail API.",
