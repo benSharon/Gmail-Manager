@@ -119,11 +119,11 @@ python gmail_cli.py --token token.json --get-message-id-content --message-id <ME
 python gmail_cli.py --token <credentials.json>
 ```
 - It will then open a new tab in the browser (choose your email):
-  ![[Pasted image 20240808001046.png]]
+  ![image](https://github.com/user-attachments/assets/3dc1d748-05bb-43c0-b053-1c9db43d8e7b)
 - Click 'continue'.
-  ![[Pasted image 20240808001121.png]]
+  ![image](https://github.com/user-attachments/assets/9c89bf1f-8024-42d1-88bc-51f7954a87ce)
 - Click 'continue', again.
-  ![[Pasted image 20240808001300.png]]
+  ![image](https://github.com/user-attachments/assets/28e30826-2e8e-4105-adfe-7b2f583000a4)
 - And finally, you should get a black page with the following notification:
-  ![[Pasted image 20240808001351.png]]
+  ![image](https://github.com/user-attachments/assets/95e8bb18-ffce-4ec0-afe0-3ba192297f6b)
 
