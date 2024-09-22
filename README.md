@@ -42,7 +42,7 @@ python gmail_cli.py --token /path/to/your/token.json
 | `--get-message-id-content`, `--message-id` | Get the content of an email (`--get-message-id-content`) by providing its `message-id`.                                                         |
 
 `python gmail_cli.py --help` displays the following:
-```bash
+```
 usage: python gmail_cli.py [-h] -t TOKEN ([-q QUERY] [--get-message-ids | --delete-messages]) [--send-message [SENDER] [DESTINATION] [SUBJECT] [MESSAGE]]
 
 options:
@@ -80,13 +80,13 @@ Example of usage:
 
 1. **Send an email**:
 
-```python
+```
 python gmail_cli.py --token /path/to/your/token.json --send-message your-email@gmail.com recipient-email@gmail.com "Subject" "Message text"
 ```
 
 2. **Get message IDs**:
 
-```python
+```
 python gmail_cli.py --token /path/to/your/token.json --get-message-ids --query "from:someone@example.com"
 ```
 
@@ -97,7 +97,7 @@ python gmail_cli.py --token /path/to/your/token.json --delete-messages --query "
 ```
 
 4. **Get message ID content**:
-```python
+```
 python gmail_cli.py --token token.json --get-message-id-content --message-id <MESSAGE ID>
 ```
 
@@ -115,7 +115,7 @@ python gmail_cli.py --token token.json --get-message-id-content --message-id <ME
 
 ## If token is expired/invalid:
 - When running the app, if you get an error saying 'token invalid/expired', delete the token.json file and re-run the app:
-```python
+```
 python gmail_cli.py --token <credentials.json>
 ```
 - It will then open a new tab in the browser (choose your email):
