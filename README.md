@@ -1,6 +1,6 @@
 # Gmail API Python CLI Application (with argparse)
 
-This project provides a command-line tool for managing Gmail messages, including sending emails, retrieving message IDs, and deleting messages in bulk using the Gmail API.
+This project provides a command-line tool for managing Gmail messages, including sending emails, retrieving message IDs, deleting messages in bulk and getting the content of a message ID using the Gmail API.
 
 ## Features
 
