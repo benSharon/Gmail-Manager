@@ -98,7 +98,7 @@ python gmail_cli.py --token /path/to/your/token.json --delete-messages --query "
 
 4. **Get message ID content**:
 ```
-python gmail_cli.py --token token.json --get-message-id-content --message-id <MESSAGE ID>
+python gmail_cli.py --token /path/to/your/token.json --get-message-id-content --message-id <MESSAGE ID>
 ```
 
 ## Notes
